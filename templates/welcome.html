@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to our Chat Bot Website</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        p {
+            color: #666;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            background-color: #f5f5f5;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 4px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            color: #333;
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px; /* Adjusted margin */
+            margin-left:200px;
+            margin-right:200px;
+        }
+       
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to our Chat Bot Website</h1>
+        <p>This is a platform where you can interact with our chat bot and create users.</p>
+  
+        <h1>Welcome to the User List</h1>
+        <ul> 
+            {% for user in users %}
+            <li>User NAME: <span style="color: #007bff;">{{ user.username }}</span>, Email: <span style="color: #28a745;">{{ user.email }}</span></li>
+            {% endfor %}
+        </ul>
+
+        <div class="button-container">
+            <form action="/users" method="get">
+                <button id="createUserBtn">Create User</button>
+            </form>
+      
+            <form action="/stream_chat" method="get">
+                <button id="chatBotBtn">Chat with AI</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
